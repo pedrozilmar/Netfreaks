@@ -1,0 +1,133 @@
+:root{
+    --fonte-vermelho:#E50914;
+    --fundo-escuro:#141414;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+
+body{
+    background:var(--fundo-escuro);
+    font-family:Arial, Helvetica, sans-serif;
+    color:white;
+    display:block;
+    height:max-content;
+
+}
+
+.header-container{
+    position:fixed;
+    top:0;
+    display:inline-block;
+
+    width:100%;
+}
+
+header.main-page-header{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    Justify-content:space-between;
+    padding:18px 40px;
+    background-image:linear-gradient(rgba(50, 50, 50, 1),rgba(50, 50, 50, 0));
+    transition:.2s ease all;
+    position:fixed;
+    top:0;
+    width:100%;
+    
+}
+
+.header-container-height{
+    position: sticky;
+    top:15px;
+    background-color: red;
+    height:10%;
+    width:100%;
+}
+
+.main-page-header .header-menu{
+    display:flex;
+    align-items:center;
+}
+
+.main-page-header .header-menu a{
+    color:#ffffff;
+    text-decoration:none;
+    margin-left:11px;
+    margin-right:11px;
+}
+.main-page-header:hover{
+    background-color:#141414;
+    
+}
+
+.main-page-header .main-menu a:hover{
+    color:#bbbbbb;
+}
+
+.main-page-header .header-menu a.logo{
+    margin-right:35px;
+}
+
+.img-logo{ /*só um ajuste porque a imagem não estava com o formato ideal*/
+    height:30px;
+    width:110%;
+}
+
+/*fim do header e início do conteúdo principal
+        talvez fosse melhor colocar isso em outro css file, caso precise reutilizar o menu em outra página fica facilitado só utilizar o css específico dele, mas sabe como é, a tarefa pede pra clonar apenas uma página e não o site inteiro, podemos conviver com isso*/
+
+
+main{
+    position:absolute;
+    top:0px;
+    font-size:16px;
+    background:url('/img/casadecartas.jpeg') no-repeat;
+    width:100%;
+    aspect-ratio:16 / 8; /*é experimental, parece, mas não estamos usando js, aí pegamos o que podemos do css, né?*/
+    z-index:-1;
+    
+    background-size:cover;
+
+    clear:both;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.title-content{
+    width:100%;
+    padding-left:50px;
+}
+
+.img-main-title img{
+    width:25%;
+}
+
+/*.header-container-height{                     só pra ajustar a distância do carrossel, já que usei posição absoluta no main content
+    width:100%;
+    aspect-ratio:17 / 9
+}*/
+.carousel-list{
+    position:relative;
+    transform:translateY(calc(55vw - 180px)); /*incluí um offset porque o main tem position:absolute, então o carrossel ficaria sobre o main sem o offset. com alguns testes, 53vw manteve a posição relativa ao bottom do main quando alteramos o tamanho da janela, e os 180px colocam o carrossel sobre o final do main, como no site original.*/
+    margin-left: 40px;
+    overflow-x:hidden;
+}
+
+.carousel{
+    position:relative;
+    display:flex;
+    flex-direction: row;
+    
+}
+
+.carousel-item{
+    position:relative;
+    margin:0 3px;
+}
